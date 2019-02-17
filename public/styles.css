@@ -12,12 +12,16 @@
 
 }
 .logo img{
-    margin-left: 20px;
+    margin-left: 40px;
     margin-top: 5px;
     position: absolute;
     height: 150px;
     width: auto;
 
+}
+.language_changer{
+    position: absolute;
+    z-index: 100;
 }
 .introductions_div{
     color: #424242;
@@ -37,7 +41,7 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    flex-wrap:
+    align-items: flex-end;
 }
 .single_nav {
     font-size: 24px;
@@ -53,11 +57,20 @@ nav .single_nav:hover {
 .home_comp{
     position: relative;
 }
+.canary_comp{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .introductions_wrapper{
     margin-top: 50px;
 }
-
-
+.video{
+    background-color: darkred;
+    height: 400px;
+    width: 700px;
+}
 
 /* carousel styiling*/
 .whole_carousel{
