@@ -16,7 +16,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <BrowserRouter>
-                    <div className="home_comp">
+                    <div  className="home_comp">
                         <Carousel />
                         <div className="introductions_wrapper">
                             <div className="introductions_div">

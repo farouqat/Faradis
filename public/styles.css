@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "helvetica neue";
+    font-family: Helvetica, Arial, sans-serif;
 }
 .header{
     position: fixed;
@@ -15,7 +15,7 @@
     margin-left: 40px;
     margin-top: 5px;
     position: absolute;
-    height: 150px;
+    height: 50px;
     width: auto;
 
 }
@@ -30,13 +30,14 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 .upper_nav{
-    position: relative;
+    /* position: relative; */
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
     flex-wrap:
 }
 .lower_nav{
+    /* margin-bottom: 0; */
     position: relative;
     display: flex;
     justify-content: center;
@@ -44,24 +45,33 @@
     align-items: flex-end;
 }
 .single_nav {
-    font-size: 24px;
+    font-size: 22px;
     font-family: "helvetica neue";
-    transition: border-bottom 0.4s linear;
+    transition: border-bottom 0.5s linear;
     border-bottom: 1px solid transparent;
     margin: 20px;
 }
-nav .single_nav:hover {
+.single_nav:hover {
     color: darkgreen;
     border-bottom: 1px solid darkgreen;
 }
+
 .home_comp{
     position: relative;
 }
 .canary_comp{
     width: 100vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#componentz{
+    /* margin-top: 50px; */
+}
+.justadivtopushthestuffdown{
+    height: 300px;
+
 }
 .introductions_wrapper{
     margin-top: 50px;

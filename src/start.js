@@ -11,9 +11,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer from "./reducers";
 import { changeLang } from "./actions";
 
-
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(reduxPromise)));
-
 
 addLocaleData(en);
 addLocaleData(ar);

@@ -10,10 +10,12 @@ export default class CanaryIslands extends React.Component{
     }
     render(){
         return(
-            <div className="canary_comp">
+            <div  id="componentz" className="canary_comp">
                 <h1> TRAVEL TO CANARY </h1>
-                <div className="video"> HERE will come a video </div>
-                <div> The Canary Islands are located in the Atlantic ocean in  front of Morocco and West Sahara.</div>
+                <video width="70%" height="auto" controls >
+                    <source src="https://faradistravel.de/.cm4all/uproc.php/0/la%20palma%20houses/.gh_Large.mp4/video.mp4?_=167af22d1d0" type="video/mp4" />
+                </video>
+                <p className="trips_tags"> The Canary Islands are located in the Atlantic ocean in  front of Morocco and West Sahara. </p>
                 <div>
                     <div>
                         <iframe width="700" height="400" frameBorder="0" src="https://www.bing.com/maps/embed?h=400&w=700&cp=29.885651709713123~-12.466071169117651&lvl=6&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
@@ -24,14 +26,6 @@ export default class CanaryIslands extends React.Component{
                         </div>
                     </div>
                 </div>
-                <video width="700" height="400" controls >
-                    <source src="https://faradistravel.de/.cm4all/mediadb/.la%20palma_Medium.mp4/video.mp4" type="video/mp4" />
-                </video>
-                Your browser does not support the video tag.
-                <div> heyyyyyyyyy </div>
-                <div> heyyyyyyyyy </div>
-                <div> heyyyyyyyyy </div>
-                <div> heyyyyyyyyy </div>
             </div>
 
         );

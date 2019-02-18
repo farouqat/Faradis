@@ -4,10 +4,16 @@ import Home from './home.js';
 import { IntlProvider } from 'react-intl';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import messages from "./messages";
 import { changeLang } from "./actions";
+import About from "./about";
+import Galerie from "./galerie";
+import Impressum from "./impressum";
 import CanaryIslands from "./trips-canaryislands";
+import Berlin from "./trips-berlin";
+import BookingAndContact from "./booking-and-contact";
+import axios from "axios";
 
 
 class App extends React.Component {
@@ -22,13 +28,13 @@ class App extends React.Component {
         const { lang } = this.props;
         return (
             <div>
-                <BrowserRouter>
-                    <div>
-                        <IntlProvider locale={lang} messages={messages[lang]}>
+                <div>
+                    <IntlProvider locale={lang} messages={messages[lang]}>
+                        <BrowserRouter>
                             <div>
                                 <div className="header">
                                     <div className="logo">
-                                        <img className="logo" src="logo.png" />
+                                        <img className="logo" src="/en-logo.png" />
                                     </div>
                                     <div className="language_changer">
                                         <a role="button" onClick ={()=> {
@@ -43,12 +49,17 @@ class App extends React.Component {
                                         }
                                         } > AR </a>
                                     </div>
+
                                     <nav className="upper_nav">
-                                        <div className="single_nav"><FormattedMessage  id = "nav.home" defaultMessage="Home"/></div>
-                                        <div className="single_nav"><FormattedMessage  id = "nav.about" defaultMessage="About"/></div>
-                                        <div className="single_nav"><FormattedMessage  id = "nav.galerie" defaultMessage="Galerie"/></div>
-                                        <div className="single_nav"><FormattedMessage  id = "nav.trips" defaultMessage="Trips"/></div>
-                                        <div className="single_nav"><FormattedMessage  id = "nav.booking_and_contact" defaultMessage="Booking and contant"/></div>
+                                        <Link to={"/"}><div className="single_nav"><FormattedMessage id = "nav.home" defaultMessage="Home"/></div></Link>
+
+                                        <Link to={"/about"}><div className="single_nav"><FormattedMessage id = "nav.about" defaultMessage="About"/></div></Link>
+
+                                        <Link to={"/galerie"}><div className="single_nav"><FormattedMessage id = "nav.galerie" defaultMessage="Galerie"/></div></Link>
+
+                                        <Link to={"/trips/canary-islands"}><div className="single_nav"><FormattedMessage id = "nav.trips" defaultMessage="Trips"/></div></Link>
+
+                                        <Link to={"/booking-and-contact"}><div className="single_nav"><FormattedMessage id = "nav.booking_and_contact" defaultMessage="Booking and contant"/></div></Link>
                                     </nav>
                                 </div>
                                 <div>
@@ -57,21 +68,48 @@ class App extends React.Component {
                                         component={Home}
                                     />
                                     <Route
+                                        exact path="/about"
+                                        component={About}
+                                    />
+                                    <Route
+                                        exact path="/galerie"
+                                        component={Galerie}
+                                    />
+                                    <Route
                                         path="/trips/canary-islands"
                                         component={CanaryIslands}
                                     />
+                                    <Route
+                                        path="/trips/berlin"
+                                        component={Berlin}
+                                    />
+                                    <Route
+                                        exact path="/impressum"
+                                        component={Impressum}
+                                    />
+                                    <Route
+                                        exact path="/booking-and-contact"
+                                        component={BookingAndContact}
+                                    />
                                 </div>
                                 <footer className="lower_nav">
-                                    <div className="single_nav"><FormattedMessage  id = "nav.home" defaultMessage="Home"/></div>
-                                    <div className="single_nav"><FormattedMessage  id = "nav.about" defaultMessage="About"/></div>
-                                    <div className="single_nav"><FormattedMessage  id = "nav.impressum" defaultMessage="Impressum"/></div>
-                                    <div className="single_nav"><FormattedMessage  id = "nav.trips" defaultMessage="Trips"/></div>
-                                    <div className="single_nav"><FormattedMessage  id = "nav.booking_and_contact" defaultMessage="Booking and contant"/></div>
+                                    <Link to={"/"}><div className="single_nav"><FormattedMessage id = "nav.home" defaultMessage="Home"/></div></Link>
+
+                                    <Link to={"/about"}><div className="single_nav"><FormattedMessage id = "nav.about" defaultMessage="About"/></div></Link>
+
+                                    <Link to={"/galerie"}><div className="single_nav"><FormattedMessage id = "nav.galerie" defaultMessage="Galerie"/></div></Link>
+
+                                    <Link to={"/impressum"}><div className="single_nav"><FormattedMessage id = "nav.impressum" defaultMessage="Impressum"/></div></Link>
+
+                                    <Link to={"/trips/canary-islands"}><div className="single_nav"><FormattedMessage id = "nav.trips" defaultMessage="Trips"/></div></Link>
+
+                                    <Link to={"/booking-and-contact"}><div className="single_nav"><FormattedMessage id = "nav.booking_and_contact" defaultMessage="Booking and contant"/></div></Link>
                                 </footer>
                             </div>
-                        </IntlProvider>
-                    </div>
-                </BrowserRouter>
+                        </BrowserRouter>
+                    </IntlProvider>
+                </div>
+
             </div>
         );
     }
