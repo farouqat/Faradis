@@ -3,6 +3,8 @@ import React from "react";
 // import { FormattedMessage } from 'react-intl';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export default class BookingAndContact extends React.Component{
     constructor(props){
@@ -36,37 +38,38 @@ export default class BookingAndContact extends React.Component{
     render(){
         return(
 
-            <div id="componentz" className="booking-comp">
+            // <div id="componentz" className="booking-comp">
+
+            <Form onSubmit={this.handlesubmit}>
                 <div className="justadivtopushthestuffdown">booooooook</div>
 
-                <Form onSubmit={this.handlesubmit}>
-                    <FormGroup>
-                        <Label for="email">Name:</Label>
-                        <Input
-                            type="name"
-                            name="name"
-                            onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="email">Email:</Label>
-                        <Input
-                            type="email"
-                            name="email"
-                            onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="email">Message:</Label>
-                        <Input
-                            type="textarea"
-                            name="message"
-                            onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <Button onClick={this.handleSubmit}>Submit</Button>
-                </Form>
-            </div>
+                <FormGroup>
+                    <Label for="email">Name:</Label>
+                    <Input
+                        type="name"
+                        name="name"
+                        onChange={this.handleChange}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="email">Email:</Label>
+                    <Input
+                        type="email"
+                        name="email"
+                        onChange={this.handleChange}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="email">Message:</Label>
+                    <Input
+                        type="textarea"
+                        name="message"
+                        onChange={this.handleChange}
+                    />
+                </FormGroup>
+                <Button onClick={this.handleSubmit}>Submit</Button>
+            </Form>
+            // </div>
         );
     }
 }

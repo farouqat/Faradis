@@ -13,7 +13,8 @@ import Impressum from "./impressum";
 import CanaryIslands from "./trips-canaryislands";
 import Berlin from "./trips-berlin";
 import BookingAndContact from "./booking-and-contact";
-import axios from "axios";
+// import axios from "axios";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends React.Component {

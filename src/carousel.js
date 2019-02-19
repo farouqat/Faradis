@@ -67,19 +67,23 @@ export default class Carousel extends React.Component {
                     <div></div>
                     <div></div>
                     <div></div>
+                    <div></div>
                 </div>
                 <div className="carousel-wrapper">
                     <div id="0" className="carousel-image">
-                        <img src="DSC_9630.JPG" alt="kit1"/>
+                        <img src="DSC_9630.JPG"/>
                     </div>
                     <div id="1" className="carousel-image">
-                        <img src="DSC_9386.JPG" alt="kit2"/>
+                        <img src="DSC_9386.JPG"/>
                     </div>
                     <div id="2" className="carousel-image">
-                        <img src="DSC_7971.JPG" alt="kit3"/>
+                        <img src="DSC_7971.JPG"/>
                     </div>
                     <div id="3" className="carousel-image">
-                        <img src="DSC_8016.JPG" alt="kit4"/>
+                        <img src="DSC_8016.JPG"/>
+                    </div>
+                    <div id="4" className="carousel-image">
+                        <img src="DSC_9468.JPG"/>
                     </div>
                 </div>
             </div>

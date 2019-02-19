@@ -18,7 +18,7 @@ export default class Home extends React.Component {
                 <BrowserRouter>
                     <div  className="home_comp">
                         <Carousel />
-                        <div className="introductions_wrapper">
+                        <div className="introductions_wrapper" >
                             <div className="introductions_div">
                                 <FormattedMessage id = "welcome_text"></FormattedMessage>
                             </div>
