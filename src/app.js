@@ -1,29 +1,37 @@
 import React from "react";
-import { BrowserRouter , Route } from 'react-router-dom';
+import About from "./about";
+import Trips from "./trips";
 import Home from './home.js';
+import Galerie from "./galerie";
+import messages from "./messages";
+import Berlin from "./trips-berlin";
+import Impressum from "./impressum";
+import { connect } from 'react-redux';
+import { changeLang } from "./actions";
+import { Link } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 import { FormattedMessage } from 'react-intl';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import messages from "./messages";
-import { changeLang } from "./actions";
-import About from "./about";
-import Galerie from "./galerie";
-import Impressum from "./impressum";
 import CanaryIslands from "./trips-canaryislands";
-import Berlin from "./trips-berlin";
 import BookingAndContact from "./booking-and-contact";
-// import axios from "axios";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter , Route } from 'react-router-dom';
+
 
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.onChange = this.onChange.bind(this);
     }
     componentDidMount() {
         console.log(this.props);
+    }
+    onChange(e){
+        this.props.dispatch(changeLang(e.target.value))({
+        });
+    }
+    goHome(){
+        location.replace('/');
     }
     render() {
         const { lang } = this.props;
@@ -34,23 +42,9 @@ class App extends React.Component {
                         <BrowserRouter>
                             <div>
                                 <div className="header">
-                                    <div className="logo">
+                                    <div className="logo" onClick={this.goHome}>
                                         <img className="logo" src="/en-logo.png" />
                                     </div>
-                                    <div className="language_changer">
-                                        <a role="button" onClick ={()=> {
-                                            var en="en";
-
-                                            this.props.dispatch(changeLang(en));
-                                        }
-                                        } > EN </a>|
-                                        <a role="button" onClick = { ()=> {
-                                            var ar="ar";
-                                            this.props.dispatch(changeLang(ar));
-                                        }
-                                        } > AR </a>
-                                    </div>
-
                                     <nav className="upper_nav">
                                         <Link to={"/"}><div className="single_nav"><FormattedMessage id = "nav.home" defaultMessage="Home"/></div></Link>
 
@@ -58,7 +52,7 @@ class App extends React.Component {
 
                                         <Link to={"/galerie"}><div className="single_nav"><FormattedMessage id = "nav.galerie" defaultMessage="Galerie"/></div></Link>
 
-                                        <Link to={"/trips/canary-islands"}><div className="single_nav"><FormattedMessage id = "nav.trips" defaultMessage="Trips"/></div></Link>
+                                        <Link to={"/trips"}><div className="single_nav"><FormattedMessage id = "nav.trips" defaultMessage="Trips"/></div></Link>
 
                                         <Link to={"/booking-and-contact"}><div className="single_nav"><FormattedMessage id = "nav.booking_and_contact" defaultMessage="Booking and contant"/></div></Link>
                                     </nav>
@@ -75,6 +69,10 @@ class App extends React.Component {
                                     <Route
                                         exact path="/galerie"
                                         component={Galerie}
+                                    />
+                                    <Route
+                                        path="/trips"
+                                        component={Trips}
                                     />
                                     <Route
                                         path="/trips/canary-islands"
@@ -102,9 +100,16 @@ class App extends React.Component {
 
                                     <Link to={"/impressum"}><div className="single_nav"><FormattedMessage id = "nav.impressum" defaultMessage="Impressum"/></div></Link>
 
-                                    <Link to={"/trips/canary-islands"}><div className="single_nav"><FormattedMessage id = "nav.trips" defaultMessage="Trips"/></div></Link>
+                                    <Link to={"/trips"}><div className="single_nav"><FormattedMessage id = "nav.trips" defaultMessage="Trips"/></div></Link>
 
                                     <Link to={"/booking-and-contact"}><div className="single_nav"><FormattedMessage id = "nav.booking_and_contact" defaultMessage="Booking and contant"/></div></Link>
+                                    <div>
+                                        <select value={this.state.postType} onChange={this.onChange} className="lang-selector">
+                                            <option value="en">English</option>
+                                            <option value="ar">العربية</option>
+                                        </select>
+                                        {this.state.postType}
+                                    </div>
                                 </footer>
                             </div>
                         </BrowserRouter>

@@ -20,8 +20,13 @@ app.post('/api/form', (req,res) => {
     const htmlEmail =`
     <h3>Contact Details</h3>
     <ul>
-    <li>Name: ${req.body.name}</li>
+    <li>First: ${req.body.first}</li>
+    <li>Last: ${req.body.last}</li>
     <li>Email: ${req.body.email}</li>
+    <li>Phone: ${req.body.phone}</li>
+    <li>Number of passengers: ${req.body.numberOfPassengers}</li>
+    <li>Date from: ${req.body.dateFrom}</li>
+    <li>Date to: ${req.body.dateTo}</li>
     </ul>
     <h3>Message: ${req.body.message}</h3>`;
 
@@ -37,7 +42,7 @@ app.post('/api/form', (req,res) => {
 
     const mailOptions = {
         from: 'faradis.travels@gmail.com',
-        to: 'info@faradistravel.de',
+        to: 'farouk.k6@gmail.com',
         subject: 'new message',
         text: req.body.message,
         html: htmlEmail
@@ -49,6 +54,7 @@ app.post('/api/form', (req,res) => {
         }
         console.log("Message sent:  ", info);
         console.log("Messasge url: ", nodemailer.getTestMessageUrl(info));
+        return res.json(info);
     });
 });
 

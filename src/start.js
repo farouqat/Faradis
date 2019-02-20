@@ -10,8 +10,6 @@ import reduxPromise from 'redux-promise';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer from "./reducers";
 import { changeLang } from "./actions";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(reduxPromise)));
 

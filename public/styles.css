@@ -4,15 +4,26 @@
     box-sizing: border-box;
     font-family: Helvetica, Arial, sans-serif;
 }
+main{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+body{
+    height: 100%;
+}
 .header{
     position: fixed;
+    height: 70px;
     width: 100vw;
-    z-index: 200;
+    z-index: 1000;
     background-color: white;
 
 }
 .logo img{
-    margin-left: 40px;
+    margin-left: 60px;
     margin-top: 5px;
     position: absolute;
     height: 50px;
@@ -40,14 +51,17 @@
     text-decoration: none;
     color:black;
 }
+
 .lower_nav{
-    /* margin-bottom: 0; */
-    position: relative;
+
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: flex-end;
+    height: 70px;
 }
+
+
 .lower_nav >* {
     text-decoration: none;
     color:black;
@@ -59,6 +73,7 @@
     border-bottom: 1px solid transparent;
     margin: 20px;
 }
+
 .single_nav:hover {
     color: darkgreen;
     border-bottom: 1px solid darkgreen;
@@ -67,6 +82,169 @@
 .home_comp{
     position: relative;
 }
+.trips_comp{
+    padding-top: 70px;
+}
+.each_trip {
+    color: black;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    font-size: 17px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    display: block;
+    z-index: 2;
+    pointer-events: none;
+    text-decoration: none;
+}
+.each_trip  >* {
+    text-decoration: none;
+    color:black;
+    width: 200px;
+    background-color: red;
+    border-bottom: 1px solid black;
+}
+#componentz{
+    /* margin-top: 50px; */
+}
+.justadivtopushthestuffdown{
+    height: 100px;
+
+}
+.introductions_wrapper{
+    margin-top: 50px;
+}
+.video{
+    height: 400px;
+    width: 700px;
+}
+
+/* ///////////// LANGUAGE SELECTOR ///////////// */
+
+.lang-selector{
+    font-size: 16px;
+    font-family: "helvetica neue";
+    background-color: none;
+    border: none;
+    margin: 20px;
+    -webkit-appearance: none;
+    padding: 5px;
+    text-align: center;
+
+}
+
+/* //////////// BOOKIN COMPONENT //////////// */
+
+.DPE {
+    font-weight: 250;
+    left:50%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 1000000;
+    top: calc(70% - 50px);
+    color: white;
+    font-size: 60px;
+    width: auto;
+    text-align: center;
+    letter-spacing: 0.01em;
+
+}
+
+form {
+    position: relative;
+    display: inline-block;
+    max-width: 700px;
+    min-width: 500px;
+    box-sizing: border-box;
+    padding: 30px 25px;
+    background-color: white;
+    border-radius: 40px;
+    margin: 40px 0;
+    left: 40%;
+    top: 50px;
+}
+h1{
+    color: darkgreen;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    margin-left: 15px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+button{
+    margin-top: 35px;
+    background-color: white;
+    border: 1px solid darkgreen;
+    line-height: 0;
+    font-size: 17px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    border-radius: 5px;
+    color: darkgreen;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+
+.question{
+    position: relative;
+    padding: 10px 0;
+}
+
+label{
+    color: black;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    font-size: 17px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    display: block;
+    position: absolute;
+    margin-left: -400px;
+    z-index: 2;
+    pointer-events: none;
+}
+input{
+    border: 1px solid black;
+    line-height: 0;
+    font-size: 17px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+.messagefield{
+    height:200px;
+    border: 1px solid black;
+    font-size: 17px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+
+
+}
+.booking-comp-desc{
+    color: black;
+    background-color: black;
+}
+
+/* //////////// CANARY COMPONENT ////////// */
+
 .canary_comp{
     width: 100vw;
     height: 100%;
@@ -74,28 +252,12 @@
     flex-direction: column;
     align-items: center;
 }
-#componentz{
-    /* margin-top: 50px; */
-}
-.justadivtopushthestuffdown{
-    height: 300px;
-
-}
-.introductions_wrapper{
-    margin-top: 50px;
-}
-.video{
-    background-color: darkred;
-    height: 400px;
-    width: 700px;
-}
 
 
-
-
-/* carousel styiling*/
+/* ////////// carousel styiling ///////////*/
 .whole_carousel{
     position: relative;
+    padding-top: 70px;
 }
 .carousel-dots {
     position: absolute;
@@ -107,9 +269,9 @@
 }
 
 .carousel-dots div {
-    width: 15px;
-    height: 15px;
-    margin: 3px;
+    width: 12px;
+    height: 12px;
+    margin: 4px;
     border: 2px solid white;
     border-radius: 30px;
     z-index: 1000;

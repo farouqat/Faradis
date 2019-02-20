@@ -61,7 +61,10 @@ export default class Carousel extends React.Component {
     }
     render() {
         return (
+
             <div className='whole_carousel'>
+                <div className="DPE"><p>Discover The Paradise On Earth</p></div>
+
                 <div className="carousel-dots">
                     <div className="active"></div>
                     <div></div>
