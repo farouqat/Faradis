@@ -1,9 +1,16 @@
 import React from "react";
+import { FormattedMessage } from 'react-intl';
 
 export default class Carousel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.timer = null;
+    }
+    componentWillUnmount(){
+        if(this.timer){
+            clearTimeout(this.timer);
+        }
     }
     componentDidMount() {
         var images = document.getElementsByClassName('carousel-image');
@@ -52,7 +59,7 @@ export default class Carousel extends React.Component {
             images[current].classList.add('onscreen');
             dots[current].classList.add('active');
 
-            timer = setTimeout(moveImages, 4000);
+            this.timer = setTimeout(moveImages, 4000);
         }
 
         var timer = setTimeout(moveImages, 4000);
@@ -63,7 +70,7 @@ export default class Carousel extends React.Component {
         return (
 
             <div className='whole_carousel'>
-                <div className="DPE"><p>Discover The Paradise On Earth</p></div>
+                <div className="DPE"><FormattedMessage id="dpe" defaultMessage="Discover Paradise on Earth"/></div>
 
                 <div className="carousel-dots">
                     <div className="active"></div>
