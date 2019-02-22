@@ -1,8 +1,7 @@
 import React from "react";
 import About from "./about";
-import Trips from "./trips";
 import Home from './home.js';
-import Gallery from "./gallery";
+import EnvironmentFriends from "./environment-friends";
 import messages from "./messages";
 import Berlin from "./trips-berlin";
 import Impressum from "./impressum";
@@ -84,7 +83,6 @@ class App extends React.Component {
 
                                         <Link to={"/about"} ><div className="single_nav"><FormattedMessage id = "nav.about" defaultMessage="About"/></div></Link>
 
-                                        <Link to={"/gallery"}><div className="single_nav"><FormattedMessage id = "nav.gallery" defaultMessage="Gallery"/></div></Link>
 
                                         <div className="dropdown" onMouseEnter={this.showDropdownMenu}
                                             onMouseLeave={this.hideDropdownMenu}>
@@ -107,10 +105,14 @@ class App extends React.Component {
                                             }
                                         </div>
                                         <Link to={"/booking-and-contact"}><div className="single_nav"><FormattedMessage id = "nav.booking_and_contact" defaultMessage="Booking and contant"/></div></Link>
+
+
+                                        <Link to={"/environment-friends"}><div className="single_nav"><FormattedMessage id = "nav.environment-friends" defaultMessage="Environment Friends"/></div></Link>
+
+
                                     </nav>
-                                    {this.state.uploaderIsVisible &&
-                                    <Trips  onClick={this.showUploader}
-                                        setImage={this.setImage} />}
+
+
                                 </div>
                                 <div>
                                     <Route
@@ -122,12 +124,8 @@ class App extends React.Component {
                                         component={About}
                                     />
                                     <Route
-                                        exact path="/gallery"
-                                        component={Gallery}
-                                    />
-                                    <Route
-                                        path="/trips"
-                                        component={Trips}
+                                        exact path="/environment-friends"
+                                        component={EnvironmentFriends}
                                     />
                                     <Route
                                         path="/trips/canary-islands"
@@ -151,13 +149,13 @@ class App extends React.Component {
 
                                     <Link to={"/about"}><div className="single_nav"><FormattedMessage id = "nav.about" defaultMessage="About"/></div></Link>
 
-                                    <Link to={"/gallery"}><div className="single_nav"><FormattedMessage id = "nav.gallery" defaultMessage="Gallery"/></div></Link>
 
                                     <Link to={"/impressum"}><div className="single_nav"><FormattedMessage id = "nav.impressum" defaultMessage="Impressum"/></div></Link>
 
-                                    <Link to={"/trips"}><div className="single_nav"><FormattedMessage id = "nav.trips" defaultMessage="Trips"/></div></Link>
-
                                     <Link to={"/booking-and-contact"}><div className="single_nav"><FormattedMessage id = "nav.booking_and_contact" defaultMessage="Booking and contant"/></div></Link>
+
+                                    <Link to={"/environment-friends"}><div className="single_nav"><FormattedMessage id = "nav.environment-friends" defaultMessage="Environment Friends"/></div></Link>
+
                                     <div>
                                         <select onChange={this.onChange} className="lang-selector">
                                             <option value={this.state.currentVal}>{this.state.currentLang}</option>

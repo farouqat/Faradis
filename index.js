@@ -42,7 +42,7 @@ app.post('/api/form', (req,res) => {
 
     const mailOptions = {
         from: 'faradis.travels@gmail.com',
-        to: 'farouk.k6@gmail.com',
+        to: 'info@faradistravel.de',
         subject: 'new message',
         text: req.body.message,
         html: htmlEmail
