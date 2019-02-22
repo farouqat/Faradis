@@ -68,7 +68,7 @@ export default {
         "dpe":"استكشف جنان الله على الأرض",
         "nav.home": "الرئيسية",
         "nav.about":"من نحن",
-        "nav.gallery" : "أصدقاء البيئة",
+        "nav.environment-friends" : "أصدقاء البيئة",
         "nav.trips" : "الرحلات" ,
         "nav.trip1":"برلين",
         "nav.trip2":"جزر الكناري",
