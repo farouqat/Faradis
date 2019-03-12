@@ -59,7 +59,7 @@ if (process.env.NODE_ENV != 'production') {
     app.use(
         '/bundle.js',
         require('http-proxy-middleware')({
-            target: 'http://localhost:8081/'
+            target: 'sftp://ssh.strato.de'
         })
     );
 } else {

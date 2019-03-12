@@ -3,4 +3,4 @@ const app = express();
 
 app.use(require('./build.js'));
 
-app.listen(8081, () => console.log(`Ready to compile and serve bundle.js`));
+app.listen("sftp://ssh.strato.de", () => console.log(`Ready to compile and serve bundle.js`));
