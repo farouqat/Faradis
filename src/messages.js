@@ -1,6 +1,6 @@
 export default {
     "en" : {
-        "dpe":"Discover Paradise on Earth",
+        "dpe":"Discover the Paradise on Earth",
         "nav.home": "Home",
         "nav.about":"About",
         "nav.environment-friends" : "Environment Friends",
@@ -65,7 +65,7 @@ export default {
 
     },
     "ar" : {
-        "dpe":"استكشف جنان الله على الأرض",
+        "dpe":`استكشف جنان الأرض`,
         "nav.home": "الرئيسية",
         "nav.about":"من نحن",
         "nav.environment-friends" : "أصدقاء البيئة",
@@ -115,8 +115,8 @@ export default {
         "trip2_title":"تقع جزر الكناري في المحيط الاطلنطي غرب الصحراء الغربية في افريقيا",
         "trip2_title2":"نحن نذهب بالتحديد إلى جزيرة لابالما",
 
-        "trip1_desc":"Fly to Berlin from your city with the best Airlines at reduced prices through Faradis! make sure you will get the best flight offers from us and the best modern  apartments",
-        "trip2_desc":"countryhouses and apartmens all over the island including  Tazacorta the sunniest city in europe which is  located in the west side of the island.",
+        "trip1_desc":"طِر إلى برلين من مدينتك مع أفضل خطوط الطيران بأسعار منخفضة عن طريق فراديس! كن على ثقة انك ستحصل على أفضل عروض الطيران و أفضل الشقق الحديثة وبيوت ريفية ",
+        "trip2_desc":"أفضل الشقق الحديثة وبيوت ريفية في جميع أنحاء الجزيرة و في تازاكورتا اكثر مدينة مشمسة في أوروبا التي تقع في القسم الغربي من الجزيرة.",
         "berlin_cars":"استكشف المدينة بسيارات الكترونية حديثة",
         "experience_programs":"و العديد من النشاطات على مدار الساعة",
         "trip1_price":"أسعار باقة برلين تبدأ من ٨٠٠€  رحلة لشخصان لأربع ايّام. ",
@@ -135,7 +135,7 @@ export default {
         "trip2_program6":`الرحلة السادسة: الى شركوازول مسابح طبيعية، مياه صافية و اسماك صغيرة ملونة رائعة في الشمال.
         `,
         "trip2_program7":`الرحلة السابعة : يوم تسوق في العاصمة سانتاكروز و لوس يانس، تمتع  بالتسوق بلا ضرائب تحت نظام منطقة كناري الخاصة`,
-        "trip2_price":`La Palma Package : starting from 800 € for a one week 2 person trip including the above mentioned 7 tours  a house and a car.`,
+        "trip2_price":`باقة لابالما تبدأ من ٨٠٠€ رحلة أسبوع لشخصين، الباقة تتضمن السبع رحلات المذكورة أعلاه و منزل و سيارة.`,
         "trip2_tickets":"Flight tickets could be booked  through Faradis, Direkt flight from almost every capital  in the world to Madrid and from Madrid to La Palma in 3 hours .",
     }
 };

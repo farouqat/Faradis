@@ -84,13 +84,13 @@ export default class Carousel extends React.Component {
                         <img src="https://faradistravel.de/.cm4all/mediadb/.DSC_9630.JPG/picture-2600"/>
                     </div>
                     <div id="2" className="carousel-image">
-                        <img src="DSC_7971.JPG"/>
+                        <img src="https://faradistravel.de/.cm4all/mediadb/.DSC_8853.JPG/picture-2600"/>
                     </div>
                     <div id="3" className="carousel-image">
-                        <img src="DSC_8016.JPG"/>
+                        <img src="https://faradistravel.de/.cm4all/mediadb/.DSC_9460.JPG/picture-2600"/>
                     </div>
                     <div id="4" className="carousel-image">
-                        <img src="DSC_9468.JPG"/>
+                        <img src="https://faradistravel.de/.cm4all/mediadb/.DSC_8017.JPG/picture-2600"/>
                     </div>
                     <div id="5" className="carousel-image">
                         <img src="https://faradistravel.de/.cm4all/mediadb/.DSC_9384.JPG/picture-2600" />

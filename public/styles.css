@@ -370,12 +370,12 @@ iframe{
     transform: translateX(-50%);
     position: absolute;
     z-index: 1000000;
-    top: calc(70% - 50px);
+    top: calc(50% - 50px);
     color: white;
     font-size: 60px;
     width: auto;
     text-align: center;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.05em;
 
 
 }

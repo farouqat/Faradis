@@ -1,17 +1,13 @@
 import React from "react";
-// import { BrowserRouter , Route } from 'react-router-dom';
 // import { FormattedMessage } from 'react-intl';
-
 
 export default class EnvironmentFriends extends React.Component{
     constructor(props){
         super(props);
     }
-
     render() {
         return (
             <div  className="environment-friends_comp " id="componentz">
-
                 <h1> Projects :</h1>
                 <h2>1 -  Houseplants against Fireworks
                 </h2>

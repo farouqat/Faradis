@@ -1,7 +1,6 @@
 import React from "react";
 import About from "./about";
 import Home from './home.js';
-import EnvironmentFriends from "./environment-friends";
 import messages from "./messages";
 import Berlin from "./trips-berlin";
 import Impressum from "./impressum";
@@ -12,10 +11,11 @@ import { IntlProvider } from 'react-intl';
 import { FormattedMessage } from 'react-intl';
 import CanaryIslands from "./trips-canaryislands";
 import BookingAndContact from "./booking-and-contact";
+import EnvironmentFriends from "./environment-friends";
 import { BrowserRouter , Route } from 'react-router-dom';
 
 
-class App extends React.Component {
+class App extends React.Component{
     constructor(props) {
         super(props);
 
@@ -25,18 +25,25 @@ class App extends React.Component {
         this.onChange = this.onChange.bind(this);
         this.showDropdownMenu = this.showDropdownMenu.bind(this);
         this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
-
     }
+
     componentDidMount() {
-        console.log(this.props);
-        console.log(`localStorage.getItem("faradisLang")`, localStorage.getItem("faradisLang"));
+
         if(localStorage.getItem("faradisLang") == "en" ){
-            this.setState({currentLang:
-            "English", otherLang: "العربية", currentVal: "en", otherVal: "ar"});
+            this.setState({
+                currentLang:"English",
+                otherLang: "العربية",
+                currentVal: "en",
+                otherVal: "ar"
+            });
         }
         else {
-            this.setState({currentLang:
-        "العربية", otherLang: "English", currentVal: "ar", otherVal: "en" });
+            this.setState({
+                currentLang:"العربية",
+                otherLang: "English",
+                currentVal: "ar",
+                otherVal: "en"
+            });
         }
     }
 
@@ -56,7 +63,6 @@ class App extends React.Component {
     onChange(e){
         this.props.dispatch(changeLang(e.target.value));
     }
-
     goHome(){
         location.replace('/');
     }
@@ -80,15 +86,11 @@ class App extends React.Component {
                                     </div>
                                     <nav className="upper_nav">
                                         <Link to={"/"}><div className="single_nav"><FormattedMessage id = "nav.home" defaultMessage="Home"/></div></Link>
-
                                         <Link to={"/about"} ><div className="single_nav"><FormattedMessage id = "nav.about" defaultMessage="About"/></div></Link>
-
-
                                         <div className="dropdown" onMouseEnter={this.showDropdownMenu}
                                             onMouseLeave={this.hideDropdownMenu}>
                                             <div className="single_nav"
                                             ><FormattedMessage id = "nav.trips" defaultMessage="Trips"/></div>
-
                                             { this.state.displayMenu ? (
                                                 <ul>
                                                     <li
@@ -98,21 +100,12 @@ class App extends React.Component {
                                                         onClick={this.goToCanary}
                                                         onMouseEnter={this.showDropdownMenu} onMouseLeave={this.hideDropdownMenu}><FormattedMessage className="active" id = "nav.trip2" defaultMessage="Canary Islands"/></li>
                                                 </ul>
-                                            ):
-                                                (
-                                                    null
-                                                )
+                                            ): (null)
                                             }
                                         </div>
                                         <Link to={"/booking-and-contact"}><div className="single_nav"><FormattedMessage id = "nav.booking_and_contact" defaultMessage="Booking and contant"/></div></Link>
-
-
                                         <Link to={"/environment-friends"}><div className="single_nav"><FormattedMessage id = "nav.environment-friends" defaultMessage="Environment Friends"/></div></Link>
-
-
                                     </nav>
-
-
                                 </div>
                                 <div>
                                     <Route
@@ -146,16 +139,10 @@ class App extends React.Component {
                                 </div>
                                 <footer className="lower_nav">
                                     <Link to={"/"}><div className="single_nav"><FormattedMessage id = "nav.home" defaultMessage="Home"/></div></Link>
-
                                     <Link to={"/about"}><div className="single_nav"><FormattedMessage id = "nav.about" defaultMessage="About"/></div></Link>
-
-
                                     <Link to={"/impressum"}><div className="single_nav"><FormattedMessage id = "nav.impressum" defaultMessage="Impressum"/></div></Link>
-
                                     <Link to={"/booking-and-contact"}><div className="single_nav"><FormattedMessage id = "nav.booking_and_contact" defaultMessage="Booking and contant"/></div></Link>
-
                                     <Link to={"/environment-friends"}><div className="single_nav"><FormattedMessage id = "nav.environment-friends" defaultMessage="Environment Friends"/></div></Link>
-
                                     <div>
                                         <select onChange={this.onChange} className="lang-selector">
                                             <option value={this.state.currentVal}>{this.state.currentLang}</option>
@@ -167,12 +154,10 @@ class App extends React.Component {
                         </BrowserRouter>
                     </IntlProvider>
                 </div>
-
             </div>
         );
     }
 }
-
 
 const mapStateToProps = function(state) {
     return {
@@ -180,5 +165,4 @@ const mapStateToProps = function(state) {
     };
 
 };
-
 export default connect(mapStateToProps)(App);

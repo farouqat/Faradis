@@ -20,7 +20,6 @@ export default class BookingAndContact extends React.Component{
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
     handleChange(e){
         this.setState(
@@ -38,7 +37,6 @@ export default class BookingAndContact extends React.Component{
                 successMessage();
             }
         });
-
         function successMessage(){
             swal({
                 title: "Thanks",
@@ -48,7 +46,6 @@ export default class BookingAndContact extends React.Component{
             });
         }
     }
-
     render(){
         return(
             <div id="componentz" className="booking-comp">
@@ -93,7 +90,6 @@ export default class BookingAndContact extends React.Component{
                             name="numberOfPassengers"
                             onChange={this.handleChange}
                         ></input>
-
                     </div>
                     <div className="question">
                         <label>Date from:</label>
@@ -102,7 +98,6 @@ export default class BookingAndContact extends React.Component{
                             name="dateFrom"
                             onChange={this.handleChange}
                         ></input>
-
                     </div>
                     <div className="question">
                         <label>Date to:</label>
@@ -111,7 +106,6 @@ export default class BookingAndContact extends React.Component{
                             name="dateTo"
                             onChange={this.handleChange}
                         ></input>
-
                     </div>
                     <div className="question">
                         <label>Message:</label>

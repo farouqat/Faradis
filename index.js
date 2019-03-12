@@ -15,8 +15,6 @@ app.use(bodyParser.urlencoded({ extended: false}));
 
 app.post('/api/form', (req,res) => {
 
-    console.log("got a request", req.body);
-
     const htmlEmail =`
     <h3>Contact Details</h3>
     <ul>
@@ -52,8 +50,6 @@ app.post('/api/form', (req,res) => {
         if (err) {
             return console.log(err);
         }
-        console.log("Message sent:  ", info);
-        console.log("Messasge url: ", nodemailer.getTestMessageUrl(info));
         return res.json(info);
     });
 });
@@ -74,6 +70,6 @@ app.get('*', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(8080, function() {
+app.listen('sftp://ssh.strato.de', function() {
     console.log("I'm listening.");
 });
